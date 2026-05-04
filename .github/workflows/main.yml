@@ -20,7 +20,7 @@ jobs:
     - name: Build image
       run: docker build -t discovery-server .
     - name: tag image
-      run: docker tag -t discovery-server bigman004/discovery-server:latest
+      run: docker tag discovery-server bigman004/discovery-server:latest
     - name: docker login
       run: docker login -u bigman004 -p ${{secrets.DOCKER_SECRET}}
     - name: docker image
