@@ -22,5 +22,5 @@ jobs:
     - name: docker login
       run: docker login -u bigman004 -p ${{secrets.DOCKER_SECRET}}
     - name: docker image
-      run: docker push bigman004/discovery-server:latest .
+      run: docker push bigman004/discovery-server:latest
 
