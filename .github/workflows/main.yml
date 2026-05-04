@@ -3,7 +3,7 @@ name: build and push service discovery
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
