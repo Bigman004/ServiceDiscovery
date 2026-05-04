@@ -1,0 +1,28 @@
+name: build and push service discovery
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/chechout@v4
+    - name: set up JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'zulu'
+        cache: maven
+    - name: Build Application
+      run: mvn clean install
+    - name: Build image
+    - run: docker build -t bigman0004/discovery-server:latest .
+    - name: docker login
+    - run: docker login -u bigman004 -p ${{secrets.DOCKER_SECRET}}
+    - name: docker image
+      run: docker push bigman004/discovery-server:latest .
+
