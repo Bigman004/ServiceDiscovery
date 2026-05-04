@@ -1,4 +1,4 @@
-name: build and push service discovery
+name: java build with maven
 
 on:
   push:
