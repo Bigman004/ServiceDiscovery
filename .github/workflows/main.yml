@@ -8,7 +8,7 @@ jobs:
     permissions:
       contents: write
     steps:
-    - uses: actions/chechout@v4
+    - uses: actions/checkout@v4
     - name: set up JDK
       uses: actions/setup-java@v4
       with:
